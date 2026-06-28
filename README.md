@@ -36,19 +36,19 @@
 ### 윈도우 Cmd 환경에서 직접 구동하기
 
 #### [백엔드 API 서버 기동]
-프로젝트 루트 디렉토리(`\Ringle-AI`)에서 실행합니다:
+프로젝트 루트 디렉토리 (`C:\assignment\Ringle-AI`)에서 실행합니다:
 ```cmd
 :: 1. 컨테이너 이미지 빌드
 podman build -t ringle-ai-web .
 
 :: 2. 데이터베이스 마이그레이션 실행
-podman run --rm -v \Ringle-AI:/app:Z ringle-ai-web bundle exec rails db:migrate
+podman run --rm -v C:\assignment\Ringle-AI:/app:Z ringle-ai-web bundle exec rails db:migrate
 
 :: 3. 테스트 시드 데이터 적재 (유저 ID 1번 생성)
-podman run --rm -v \Ringle-AI:/app:Z ringle-ai-web bundle exec rails db:seed
+podman run --rm -v C:\assignment\Ringle-AI:/app:Z ringle-ai-web bundle exec rails db:seed
 
 :: 4. Rails API 서버 구동 (포트 3000)
-podman run -it --name ringle-backend --rm -v \Ringle-AI:/app:Z -p 3000:3000 localhost/ringle-ai-web bundle exec rails server -b 0.0.0.0
+podman run -it --name ringle-backend --rm -v C:\assignment\Ringle-AI:/app:Z -p 3000:3000 localhost/ringle-ai-web bundle exec rails server -b 0.0.0.0
 ```
 
 #### [프론트엔드 개발 서버 기동]
@@ -71,7 +71,7 @@ npm run dev
 데이터베이스 멤버십 활성 여부 판단 로직, 기간 만료 시 차단, 구독 시 기존 권한 결합 및 기한 누적 추가, 어드민 제어 컨트롤러 기능을 26개 예제를 통해 엄격히 테스트합니다.
 - 실행 명령어:
   ```bash
-  podman run --rm -v \Ringle-AI:/app:Z localhost/ringle-ai-web bundle exec rspec
+  podman run --rm -v C:\assignment\Ringle-AI:/app:Z localhost/ringle-ai-web bundle exec rspec
   ```
 - 검증 결과: `26 examples, 0 failures` (100% 통과 완료)
 
