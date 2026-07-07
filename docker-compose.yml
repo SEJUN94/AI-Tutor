@@ -1,6 +1,6 @@
 services:
   web:
-    image: ringle-ai-web
+    image: ai-tutor-web
     volumes:
       - .:/app
     ports:

@@ -26,7 +26,7 @@ vi.stubGlobal('AudioContext', vi.fn().mockImplementation(() => ({
   })),
 })));
 
-describe('Ringle AI 스피킹 튜터 클라이언트 테스트', () => {
+describe('AI Tutor 스피킹 튜터 클라이언트 테스트', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     localStorage.clear();
@@ -42,7 +42,7 @@ describe('Ringle AI 스피킹 튜터 클라이언트 테스트', () => {
 
     render(<Home />);
 
-    // Ringle AI 타이틀 감지
+    // AI Tutor 타이틀 감지
     expect(screen.getByText('AI 스피킹 튜터 멤버십')).toBeInTheDocument();
     
     // API Key 안내 경고 감지
@@ -50,7 +50,7 @@ describe('Ringle AI 스피킹 튜터 클라이언트 테스트', () => {
     
     // 멤버십 미보유 대시보드 메시지 감지
     await waitFor(() => {
-      expect(screen.getByText('활성화된 Ringle AI 멤버십이 없습니다.')).toBeInTheDocument();
+      expect(screen.getByText('활성화된 AI Tutor 멤버십이 없습니다.')).toBeInTheDocument();
     });
   });
 

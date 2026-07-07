@@ -24,7 +24,7 @@ const USER_ID = 1; // 테스트용 고정 유저 ID
 
 // 영어 회화 학습 유도용 System Prompt
 const SYSTEM_PROMPT = 
-  "You are Toby, an empathetic, professional English tutor from Ringle. " +
+  "You are Toby, an empathetic, professional English tutor from AI Tutor. " +
   "Your goal is to help the user practice English conversational speaking. " +
   "Engage in a natural dialogue, keep your responses concise (2-3 sentences max), " +
   "correct minor grammar mistakes gently if necessary, and always prompt the user with a natural follow-up question to keep the conversation flowing.";
@@ -188,11 +188,10 @@ const Home: React.FC<{ membership: Membership | null; fetchStatus: () => void }>
         </div>
       )}
 
-      {/* 헤더 */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(99, 102, 241, 0.1)', border: '1px solid rgba(99, 102, 241, 0.3)', padding: '6px 16px', borderRadius: '30px', color: '#A5B4FC', fontWeight: '500', fontSize: '0.9rem', marginBottom: '16px' }}>
           <Sparkles size={14} />
-          <span>Ringle AI Tutor System</span>
+          <span>AI Tutor System</span>
         </div>
         <h1 className="title-large" style={{ margin: '0 0 10px 0' }}>AI 스피킹 튜터 멤버십</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
@@ -337,7 +336,7 @@ const Home: React.FC<{ membership: Membership | null; fetchStatus: () => void }>
             ) : (
               <div style={{ textAlign: 'center', padding: '30px 10px', color: '#94A3B8' }}>
                 <ShieldAlert size={40} color="#64748B" style={{ marginBottom: '12px' }} />
-                <p>활성화된 Ringle AI 멤버십이 없습니다.</p>
+                <p>활성화된 AI Tutor 멤버십이 없습니다.</p>
                 <p style={{ fontSize: '0.85rem', color: '#64748B', marginTop: '6px' }}>하단의 요금제 결제를 통해 즉시 멤버십을 획득하세요.</p>
               </div>
             )}
@@ -475,7 +474,7 @@ const Home: React.FC<{ membership: Membership | null; fetchStatus: () => void }>
       <div style={{ marginTop: '40px' }}>
         <h2 className="title-medium" style={{ textAlign: 'center', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
           <CreditCard color="#6366F1" />
-          <span>Ringle AI 요금제 구독 (Mock PG 연동)</span>
+          <span>AI Tutor 요금제 구독 (Mock PG 연동)</span>
         </h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px' }}>
@@ -552,7 +551,7 @@ const Home: React.FC<{ membership: Membership | null; fetchStatus: () => void }>
           <div className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '4px solid #F59E0B' }}>
             <div>
               <p style={{ fontWeight: '700', fontSize: '1.2rem', margin: '0 0 8px 0' }}>종합 올인원 마스터</p>
-              <p style={{ color: '#64748B', fontSize: '0.8rem', marginBottom: '16px' }}>Ringle AI의 모든 핵심 기능 포함</p>
+              <p style={{ color: '#64748B', fontSize: '0.8rem', marginBottom: '16px' }}>AI Tutor의 모든 핵심 기능 포함</p>
               <p style={{ fontSize: '1.8rem', fontWeight: '800', color: '#F8FAFC', marginBottom: '20px' }}>₩30,000<span style={{ fontSize: '0.9rem', color: '#64748B', fontWeight: '400' }}> / 30일</span></p>
               
               <ul style={{ paddingLeft: '20px', margin: '0 0 24px 0', fontSize: '0.85rem', color: '#94A3B8', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -596,7 +595,7 @@ const Chat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: 'ai',
-      text: "Hello! I'm Toby, your Ringle AI tutor. Let's practice English speaking today. What topic would you like to discuss?",
+      text: "Hello! I'm Toby, your AI Tutor. Let's practice English speaking today. What topic would you like to discuss?",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);

@@ -1,6 +1,6 @@
-# Ringle AI Tutor - AI Membership & Speech Tutoring Application
+# AI Tutor - AI Membership & Speech Tutoring Application
 
-이 프로젝트는 Ruby on Rails 기반의 백엔드와 Vite React + TypeScript 기반의 프론트엔드를 결합하여 구현한 **Ringle AI 튜터 멤버십 관리 및 실시간 영어 회화 트레이닝 웹 애플리케이션**입니다.
+이 프로젝트는 Ruby on Rails 기반의 백엔드와 Vite React + TypeScript 기반의 프론트엔드를 결합하여 구현한 **AI Tutor 멤버십 관리 및 실시간 영어 회화 트레이닝 웹 애플리케이션**입니다.
 
 브라우저 내장 Web Speech API와 OpenAI API를 융합한 **이중 하이브리드 인공지능 엔진**과 **로컬 오디오 RMS 분석 VAD**를 탑재하여 요금 장벽과 통신 딜레이를 혁신적으로 최소화한 회화 학습 UX를 제공합니다.
 
@@ -34,23 +34,23 @@
 ## 2. 로컬 실행 방법 (Quick Start)
 
 #### [백엔드 API 서버 기동]
-프로젝트 루트 디렉토리 (`\Ringle-AI`)에서 실행합니다:
+프로젝트 루트 디렉토리 (`C:\assignment\AI-Tutor`)에서 실행합니다:
 ```cmd
 :: 1. 컨테이너 이미지 빌드
-podman build -t ringle-ai-web .
+podman build -t ai-tutor-web .
 
 :: 2. 데이터베이스 마이그레이션 실행
-podman run --rm -v \Ringle-AI:/app:Z ringle-ai-web bundle exec rails db:migrate
+podman run --rm -v C:\assignment\AI-Tutor:/app:Z ai-tutor-web bundle exec rails db:migrate
 
 :: 3. 테스트 시드 데이터 적재 (유저 ID 1번 생성)
-podman run --rm -v \Ringle-AI:/app:Z ringle-ai-web bundle exec rails db:seed
+podman run --rm -v C:\assignment\AI-Tutor:/app:Z ai-tutor-web bundle exec rails db:seed
 
 :: 4. Rails API 서버 구동 (포트 3000)
-podman run -it --name ringle-backend --rm -v \Ringle-AI:/app:Z -p 3000:3000 localhost/ringle-ai-web bundle exec rails server -b 0.0.0.0
+podman run -it --name ai-tutor-backend --rm -v C:\assignment\AI-Tutor:/app:Z -p 3000:3000 localhost/ai-tutor-web bundle exec rails server -b 0.0.0.0
 ```
 
 #### [프론트엔드 개발 서버 기동]
-새 창을 열어 `client` 디렉토리(`\Ringle-AI\client`)로 이동한 후 실행합니다:
+새 창을 열어 `client` 디렉토리(`C:\assignment\AI-Tutor\client`)로 이동한 후 실행합니다:
 ```bash
 # 1. 의존성 모듈 설치
 npm install
@@ -69,7 +69,7 @@ npm run dev
 데이터베이스 멤버십 활성 여부 판단 로직, 기간 만료 시 차단, 구독 시 기존 권한 결합 및 기한 누적 추가, 어드민 제어 컨트롤러 기능을 26개 예제를 통해 엄격히 테스트합니다.
 - 실행 명령어:
   ```bash
-  podman run --rm -v C:\assignment\Ringle-AI:/app:Z localhost/ringle-ai-web bundle exec rspec
+  podman run --rm -v C:\assignment\AI-Tutor:/app:Z localhost/ai-tutor-web bundle exec rspec
   ```
 - 검증 결과: `26 examples, 0 failures` (100% 통과 완료)
 
